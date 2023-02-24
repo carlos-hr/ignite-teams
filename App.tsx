@@ -1,12 +1,14 @@
 import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import { Groups } from "@screens/Groups";
+import { ThemeProvider } from "styled-components";
+import theme from "@theme/index";
 
 export default function App() {
   return (
-    <View>
-      <StatusBar style="auto" />
+    <ThemeProvider theme={theme}>
       <Groups />
-    </View>
+      <StatusBar style="auto" />
+    </ThemeProvider>
   );
 }
