@@ -14,8 +14,12 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      {fontsLoaded ? <Groups /> : <ActivityIndicator />}
-      <StatusBar style="auto" />
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
+      {fontsLoaded ? <Groups /> : <Loading />}
     </ThemeProvider>
   );
 }
