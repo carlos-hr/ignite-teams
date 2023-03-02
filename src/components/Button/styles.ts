@@ -21,5 +21,5 @@ export const Container = styled(TouchableOpacity)<ButtonProps>`
 export const Text = styled.Text`
   font-size: ${({ theme }) => theme.FONT_SIZE.MD}px;
   font-family: ${({ theme }) => theme.FONT_FAMILY.BOLD};
-  font-size: ${({ theme }) => theme.COLORS.WHITE};
+  color: ${({ theme }) => theme.COLORS.WHITE};
 `;
