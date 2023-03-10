@@ -9,8 +9,18 @@ import { Input } from "@components/Input";
 import { PlayerCard } from "@components/PlayerCard";
 
 import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
+import { useRoute } from "@react-navigation/native";
+
+type RouteParams = {
+  group: string;
+};
 
 export function Players() {
+  const route = useRoute();
+  const {
+    params: { group },
+  } = route;
+
   const [team, setTeam] = useState("Time A");
   const [players, setPlayers] = useState(["Rodrigo", "Vini"]);
 

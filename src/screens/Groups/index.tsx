@@ -3,6 +3,7 @@ import { EmptyList } from "@components/EmptyList";
 import { GroupCard } from "@components/GroupCard";
 import { Header } from "@components/Header";
 import { Highlight } from "@components/Highlight";
+import { useNavigation } from "@react-navigation/native";
 import { useState } from "react";
 import { FlatList } from "react-native";
 import { Container } from "./styles";
@@ -17,6 +18,11 @@ export function Groups() {
 
   function generateId() {
     return Math.floor(Math.random() + new Date().getTime()).toString();
+  }
+  const navigation = useNavigation();
+
+  function handleNewGroup() {
+    navigation.navigate("new");
   }
 
   return (
@@ -36,7 +42,7 @@ export function Groups() {
         }
       />
 
-      <Button text="Criar nova turma" />
+      <Button text="Criar nova turma" onPress={handleNewGroup} />
     </Container>
   );
 }
